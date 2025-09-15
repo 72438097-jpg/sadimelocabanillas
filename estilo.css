@@ -1,0 +1,243 @@
+/* General */
+body {
+  margin: 0;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #fffbff;
+  color: #333;
+}
+
+/* Menú */
+header {
+  background: linear-gradient(90deg, #d3ab9e, #eac9c1, #ebd8d0);
+}
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 30px;
+}
+.navbar .logo {
+  font-size: 22px;
+  font-weight: bold;
+  color: #fff;
+  letter-spacing: 1px;
+}
+.navbar ul {
+  list-style: none;
+  display: flex;
+  margin: 0;
+  padding: 0;
+}
+.navbar ul li {
+  margin: 0 15px;
+}
+.navbar ul li a {
+  text-decoration: none;
+  color: #fff;
+  font-weight: 500;
+  transition: all 0.3s ease;
+}
+.navbar ul li a:hover {
+  color: #fce7ef;
+  border-bottom: 2px solid #fff;
+}
+
+/* Secciones */
+.seccion {
+  display: none;
+  padding: 50px 40px;
+  animation: fadeIn 0.8s ease;
+}
+.seccion.activa {
+  display: block;
+}
+@keyframes fadeIn {
+  from {opacity: 0; transform: translateY(20px);}
+  to {opacity: 1; transform: translateY(0);}
+}
+hr {
+  border: none;
+  border-top: 2px solid #f3dede;
+  margin: 40px 0;
+}
+
+/* Perfil */
+.perfil-box {
+  text-align: center;
+  max-width: 600px;
+  margin: auto;
+  padding: 30px;
+  background: transparent;
+}
+.perfil-foto {
+  border-radius: 50%;
+  width: 350px;   /* antes 220px */
+  height: 350px;  /* antes 220px */
+  border: 8px solid #d3ab9e; /* borde un poquito más grueso */
+  margin-bottom: 20px;
+  box-shadow: 0 6px 14px rgba(0,0,0,0.1); /* para que resalte más */
+}
+.perfil-foto:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 30px rgba(211, 171, 158, 0.7);
+}
+.perfil-box h2 {
+  margin: 10px 0;
+  font-size: 28px;
+  font-weight: bold;
+  color: #d38b8b;
+  letter-spacing: 1px;
+}
+.perfil-box p {
+  font-size: 17px;
+  color: #666;
+  line-height: 1.6;
+  font-style: italic;
+  margin-top: 10px;
+  background: linear-gradient(90deg, #f9e6e6, #fff);
+  padding: 12px 18px;
+  border-radius: 12px;
+  display: inline-block;
+}
+
+/* Portafolio */
+.actividades {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 25px;
+}
+.actividad {
+  border: none;
+  border-radius: 15px;
+  padding: 25px;
+  background: linear-gradient(145deg, #fbe8e8, #fff);
+  box-shadow: 0 6px 12px rgba(0,0,0,0.08);
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+.actividad:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 8px 16px rgba(0,0,0,0.12);
+}
+.actividad h3 {
+  margin-top: 0;
+  font-size: 20px;
+  color: #c96f7b;
+}
+input[type="file"] {
+  margin-top: 10px;
+  font-size: 14px;
+  color: #555;
+  background: #fff;
+  border: 1px solid #eac9c1;
+  border-radius: 8px;
+  padding: 6px;
+  cursor: pointer;
+}
+input[type="file"]:hover {
+  background: #fff3f5;
+}
+.archivo-subido {
+  font-size: 14px;
+  color: #666;
+  margin-top: 8px;
+}
+
+/* Administrador */
+.login-container {
+  max-width: 360px;
+  margin: auto;
+  padding: 30px;
+  border: none;
+  border-radius: 20px;
+  background: linear-gradient(180deg, #fff, #ffe9ef);
+  text-align: center;
+  box-shadow: 0 6px 15px rgba(0,0,0,0.1);
+  transition: transform 0.3s;
+}
+.login-container:hover {
+  transform: scale(1.02);
+}
+.usuario-img {
+  width: 100px;
+  margin-bottom: 15px;
+  border-radius: 50%;
+  border: 3px solid #eac9c1;
+  padding: 5px;
+  background: #fff;
+}
+.login-container h2 {
+  margin-bottom: 20px;
+  color: #c96f7b;
+}
+.login-container input {
+  width: 100%;
+  padding: 12px;
+  margin: 8px 0;
+  border-radius: 8px;
+  border: 1px solid #e3b6c1;
+  outline: none;
+  transition: 0.3s;
+}
+.login-container input:focus {
+  border-color: #c96f7b;
+  box-shadow: 0 0 8px rgba(201, 111, 123, 0.3);
+}
+.login-container button {
+  width: 100%;
+  padding: 12px;
+  margin-top: 12px;
+  background: #d38b8b;
+  border: none;
+  border-radius: 8px;
+  color: #fff;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+.login-container button:hover {
+  background: #c96f7b;
+}
+#login-msg {
+  margin-top: 12px;
+  font-size: 14px;
+  color: #c96f7b;
+}
+
+/* Panel de administración */
+#admin-panel {
+  text-align: center;
+  padding: 50px;
+  background: linear-gradient(180deg, #fff, #fff3f7);
+  border-radius: 15px;
+  box-shadow: 0 6px 12px rgba(0,0,0,0.1);
+  max-width: 700px;
+  margin: auto;
+}
+
+#admin-panel h2 {
+  color: #c96f7b;
+  margin-bottom: 20px;
+}
+
+.admin-opciones {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 15px;
+  margin-top: 20px;
+}
+
+.admin-opciones button {
+  background: #d38b8b;
+  border: none;
+  border-radius: 8px;
+  color: #fff;
+  padding: 12px 18px;
+  font-size: 15px;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.admin-opciones button:hover {
+  background: #c96f7b;
+}
