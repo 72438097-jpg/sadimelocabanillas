@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Portafolio - Sadith Melo Cabanillas</title>
+  <link rel="stylesheet" href="estilo.css">
+</head>
+<body>
+  <!-- Menú -->
+  <header>
+    <nav class="navbar">
+      <h1 class="logo">Mi Portafolio</h1>
+      <ul>
+        <li><a href="#" onclick="mostrarSeccion('perfil')">Perfil</a></li>
+        <li><a href="#" onclick="mostrarSeccion('portafolio')">Portafolio</a></li>
+        <li><a href="#" onclick="mostrarSeccion('admin')">Administrador</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- Perfil -->
+  <section id="perfil" class="seccion activa">
+    <div class="perfil-box">
+      <img src="img/img1.png" alt="Foto de perfil" class="perfil-foto">
+      <h2>SADITH MELO CABANILLAS</h2>
+      <p>Programadora y diseñadora en formación, apasionada por la tecnología, la innovación y la creatividad. Me destaco por mi responsabilidad, proactividad y empatía.</p>
+    </div>
+    <hr>
+  </section>
+
+  <!-- Portafolio -->
+  <section id="portafolio" class="seccion">
+    <h2>Mis Actividades</h2>
+    <div class="actividades">
+      <script>
+        for (let i = 1; i <= 20; i++) {
+          document.write(`
+            <div class="actividad">
+              <h3>Actividad ${i}</h3>
+              <input type="file" id="file-${i}" onchange="mostrarArchivo(${i})" />
+              <p id="archivo-${i}" class="archivo-subido">Ningún archivo subido</p>
+            </div>
+          `);
+        }
+      </script>
+    </div>
+    <hr>
+  </section>
+
+  <!-- Administrador -->
+  <section id="admin" class="seccion">
+    <div class="login-container">
+      <img src="https://cdn-icons-png.flaticon.com/512/847/847969.png" alt="Usuario" class="usuario-img">
+      <h2>Acceso Administrador</h2>
+      <form onsubmit="return login(event)">
+        <input type="text" id="username" placeholder="Usuario" required>
+        <input type="password" id="password" placeholder="Contraseña" required>
+        <button type="submit">Ingresar</button>
+      </form>
+      <p id="login-msg"></p>
+    </div>
+    <hr>
+  </section>
+
+  <script src="script.js"></script>
+</body>
+</html>
+
+  <!-- Administrador (Login) -->
+  <section id="admin" class="seccion">
+    <div class="login-container">
+      <img src="https://cdn-icons-png.flaticon.com/512/847/847969.png" alt="Usuario" class="usuario-img">
+      <h2>Acceso Administrador</h2>
+      <form onsubmit="return login(event)">
+        <input type="text" id="username" placeholder="Usuario" required>
+        <input type="password" id="password" placeholder="Contraseña" required>
+        <button type="submit">Ingresar</button>
+      </form>
+      <p id="login-msg"></p>
+    </div>
+    <hr>
+  </section>
+
+  <!-- Panel de Administración -->
+  <section id="admin-panel" class="seccion">
+    <h2>📌 Panel de Administración</h2>
+    <p>Bienvenida al área de gestión. Desde aquí puedes modificar tu perfil y actividades.</p>
+    <div class="admin-opciones">
+      <button onclick="mostrarSeccion('perfil')">Editar Perfil</button>
+      <button onclick="mostrarSeccion('portafolio')">Gestionar Portafolio</button>
+      <button onclick="mostrarSeccion('admin')">Cerrar Sesión</button>
+    </div>
+    <hr>
+  </section>
+
+  <script src="script.js"></script>
+</body>
+</html>
+
